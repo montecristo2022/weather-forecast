@@ -1,0 +1,35 @@
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.forecastCard {
+    min-height: 300px;
+    transition: transform 0.3s;
+}
+
+
+.forecastCard:hover {
+    transform: scale(1.01);
+}
+
+.forecastContainer {
+    margin-bottom: 50px;
+}
+
+.temperature-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.temperature-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temperature-value {
+    width: 50%;
+    text-align: center;
+}

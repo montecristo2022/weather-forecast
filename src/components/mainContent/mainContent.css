@@ -1,0 +1,44 @@
+.main {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.weatherContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    /* margin-left: 300px;
+    margin-right: 300px; */
+    margin-bottom: 100px;
+}
+
+.weatherInfo {
+    display: flex;
+}
+
+.weatherText {
+    margin-bottom: 20px;
+}
+
+
+
+.weatherMainInfo {
+    display: flex;
+    align-items: center;
+}
+
+
+.weatherCard {
+    min-width: 250px;
+    transition: transform 0.3s;
+}
+
+.weatherCard:hover {
+    transform: scale(1.01);
+}
+
+.cardText {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 18px !important;
+    color: #333 !important;
+}
