@@ -1,9 +1,9 @@
 import { fetchNextHours } from "../../Api/Api";
 import { useEffect, useState } from "react";
 import { Card, CardHeader, CardContent, Grid } from "@mui/material";
-import "./FiveDaysForecast.css";
+import "./hourlyWeather.css";
 
-function FiveDaysForecast({ renderData }) {
+function HourlyWeather({ renderData }) {
   const [dataForRender, setDataForRender] = useState(null);
 
   useEffect(() => {
@@ -56,4 +56,4 @@ function FiveDaysForecast({ renderData }) {
   );
 }
 
-export default FiveDaysForecast;
+export default HourlyWeather;

@@ -1,5 +1,5 @@
-import { Helmet } from 'react-helmet';
-import { RegisterForm } from '../components/RegisterForm/RegisterForm';
+import { Helmet } from "react-helmet";
+import { RegisterForm } from "../components/registerForm/RegisterForm";
 
 export default function Register() {
   return (
@@ -7,7 +7,7 @@ export default function Register() {
       <Helmet>
         <title>Registration</title>
       </Helmet>
-     
+
       <RegisterForm />
     </div>
   );

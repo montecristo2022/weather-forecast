@@ -14,6 +14,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link as RouterLink } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -69,7 +70,6 @@ function SignIn() {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
@@ -132,9 +132,11 @@ function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="/register" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <RouterLink to="/register" style={{ textDecoration: "none" }}>
+                    <Link variant="body2">
+                      {"Don't have an account? Sign Up"}
+                    </Link>
+                  </RouterLink>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />

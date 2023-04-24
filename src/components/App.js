@@ -12,7 +12,6 @@ const RegisterPage = lazy(() => import("../pages/Register"));
 export const App = () => {
   const [renderData, setRenderData] = useState("");
 
-  
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
@@ -24,8 +23,13 @@ export const App = () => {
     <b>Loading Page...</b>
   ) : (
     <Routes>
-      <Route path="/" element={<Layout setRenderData={setRenderData}/>}>
-          <Route index element={<HomePage renderData={renderData}  setRenderData={setRenderData}/>} />
+      <Route path="/" element={<Layout />}>
+        <Route
+          index
+          element={
+            <HomePage renderData={renderData} setRenderData={setRenderData} />
+          }
+        />
         <Route
           path="/register"
           element={

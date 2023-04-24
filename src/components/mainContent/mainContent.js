@@ -1,8 +1,7 @@
-import FiveDaysForecast from "../fiveDaysForecast/FiveDaysForecast.js";
+import HourlyWeather from "../hourlyWeather/hourlyWeather";
 import { Card, CardContent, CardHeader, Typography } from "@mui/material";
 import { useEffect } from "react";
 import "./mainContent.css";
-
 
 function MainContent({ renderData }) {
   const makeCelsius = 273.15;
@@ -50,13 +49,11 @@ function MainContent({ renderData }) {
         <Card className="weatherCard">
           <CardHeader title={`City: ${renderData.name}`} />
           <CardContent>
-            <Typography className="cardText">
-              Day of week: {date}
-            </Typography>
+            <Typography className="cardText">Day of week: {date}</Typography>
             <Typography className="cardText">Time: {time}</Typography>
             <Typography className="cardText">
-              Temperature:{" "}
-              {Math.round(renderData.main.temp - makeCelsius)}&#8451;
+              Temperature: {Math.round(renderData.main.temp - makeCelsius)}
+              &#8451;
             </Typography>
           </CardContent>
         </Card>
@@ -96,11 +93,12 @@ function MainContent({ renderData }) {
           </CardContent>
         </Card>
       </div>
-      <FiveDaysForecast renderData={renderData.name} />
+      <HourlyWeather renderData={renderData.name} />
     </main>
   );
 }
 
-
-
 export default MainContent;
+
+
+

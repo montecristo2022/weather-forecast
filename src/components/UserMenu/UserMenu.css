@@ -1,0 +1,29 @@
+/* @media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+} */
+
+
+
+@media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+
+  .logoutButton {
+    width: 120px;
+
+    height: 50px;
+  }
+
+  .inputContainer {
+    margin-bottom: 20px;
+  }
+   .inputStyle {
+    width: 45% !important;
+   }
+} 
+
+
+
