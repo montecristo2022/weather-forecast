@@ -1,8 +1,10 @@
 import Notiflix from 'notiflix';
 
+const ApiKey = '734588c2699055204b9a6d7af7a03dcd'
+
 export const fetchData = async (location) => {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=734588c2699055204b9a6d7af7a03dcd`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${ApiKey}`);
     
     if (!response.ok) {
       Notiflix.Report.failure('Error', `City ${location} is not exist`, 'Ok');
@@ -19,7 +21,7 @@ export const fetchData = async (location) => {
 
 export const fetchNextHours = async (location) => {
   try {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=734588c2699055204b9a6d7af7a03dcd`);
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${ApiKey}`);
     
     if (!response.ok) {
       Notiflix.Report.failure('Error', `City ${location} is not exist`, 'Ok');
