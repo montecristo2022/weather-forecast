@@ -30,18 +30,22 @@ function MainContent({ renderData }) {
       minute: "2-digit",
     });
 
-  const date =
-    renderData.dt &&
-    new Date(renderData.dt * 1000).toLocaleDateString("en-US", {
-      weekday: "long",
-    });
+  const userTimezoneOffset = new Date().getTimezoneOffset() * 60;
+  const timeZone = renderData.timezone / 3600;
+  const cityTimezoneOffset = timeZone * 3600;
+  const dateOptions = { weekday: "long" };
+  const date = new Intl.DateTimeFormat("en-US", dateOptions).format(
+    new Date((renderData.dt + cityTimezoneOffset + userTimezoneOffset) * 1000)
+  );
+
+  const now = Math.floor(Date.now() / 1000);
+
+  const localTime = new Date((now + renderData.timezone) * 1000);
 
   const time =
-    renderData.dt &&
-    new Date(renderData.dt * 1000).toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    localTime.getUTCHours().toString().padStart(2, "0") +
+    ":" +
+    localTime.getUTCMinutes().toString().padStart(2, "0");
 
   return (
     <main className="main">
@@ -99,6 +103,3 @@ function MainContent({ renderData }) {
 }
 
 export default MainContent;
-
-
-
