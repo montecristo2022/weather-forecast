@@ -56,4 +56,5 @@ function HourlyWeather({ renderData }) {
   );
 }
 
+
 export default HourlyWeather;
